@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+html, body, #root {
+height: 100%;
+}
+
+body {
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+
+a { text-decoration: none; }
+
+
+.section {
+padding: 120px 24px;
+}
+
+
+.container {
+max-width: 1000px;
+margin: 0 auto;
+}
+
+
+.profile-avatar {
+width: 160px;
+height: 160px;
+border-radius: 20px;
+object-fit: cover;
+}
