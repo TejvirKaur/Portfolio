@@ -10,6 +10,7 @@ import pawllImage from '../assets/ProjectCover/Splash.jpeg';
 import padelpatchImage from '../assets/ProjectCover/padelpatch.jpeg';
 import streetsightImage from '../assets/ProjectCover/streetsight.jpeg';
 import zyraImage from '../assets/ProjectCover/zyraImage.jpeg';
+import sudikshaImage from '../assets/ProjectCover/SudikshaImage.jpeg';
 
 const projects = [
   {
@@ -35,7 +36,13 @@ const projects = [
     image: zyraImage,
     desc: "Zyra is an AR-powered habit-building app that turns kids’ daily routines into fun adventures with interactive 3D companions and playful learning.",
     link: "https://zyraapp.wmdd.ca/",
-  }
+  },
+  {
+    title: "Sudiksha Kumar - Portfolio",
+    image: sudikshaImage,
+    desc: "A personal portfolio website showcasing projects and skills.",
+    link: "https://github.com/TejvirKaur/sudiksha_kumar_portfolio",
+  },
  
 ];
 
