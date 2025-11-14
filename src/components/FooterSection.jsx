@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography'
 
 export default function Footer() {
 return (
-<Box component="footer" sx={{ py: 4, textAlign: 'center' }}>
+<Box component="footer" sx={{ py: 4, textAlign: 'center', borderTop: '1px solid #e0e0e0',  marginLeft: 2, marginRight: 2 }}>
 <Typography variant="body2" sx={{ color: 'text.secondary' }}>© {new Date().getFullYear()} Designed and Developed by Tejvir Kaur</Typography>
 </Box>
 )
