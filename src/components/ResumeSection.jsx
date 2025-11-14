@@ -40,56 +40,127 @@ export default function ResumeSection() {
     },
   ]
 
+  // const Timeline = ({ items, isEducation }) => (
+  //   <div style={{ position: 'relative', marginLeft: '20px' }}>
+  //     <div
+  //       style={{
+  //         position: 'absolute',
+  //         left: '10px',
+  //         top: 0,
+  //         bottom: 0,
+  //         width: '2px',
+  //         backgroundColor: '#d3b8ae',
+  //         borderRadius: '1px',
+  //       }}
+  //     />
+  //     {items.map((item, i) => (
+  //       <div
+  //         key={i}
+  //         style={{
+  //           position: 'relative',
+  //           marginBottom: '30px',
+  //           paddingLeft: '40px', 
+  //         }}
+  //       >
+  //         <div
+  //           style={{
+  //             position: 'absolute',
+  //             left: '5px', 
+  //             top: '6px',
+  //             width: '12px',
+  //             height: '12px',
+  //             borderRadius: '50%',
+  //             backgroundColor: '#a37f74',
+  //             border: '2px solid #f9f4ef',
+  //             boxSizing: 'border-box',
+  //           }}
+  //         />
+
+  //         {/* text */}
+  //         <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
+  //           {isEducation ? item.degree : `${item.role} — ${item.company}`}
+  //         </Typography>
+  //         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+  //           {isEducation ? item.school : item.date}
+  //         </Typography>
+  //         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+  //           {isEducation ? item.date : item.desc}
+  //         </Typography>
+  //       </div>
+  //     ))}
+  //   </div>
+  // )
+
   const Timeline = ({ items, isEducation }) => (
-    <div style={{ position: 'relative', marginLeft: '20px' }}>
+  <div style={{ position: 'relative' }}>
+    <div
+      style={{
+        position: 'absolute',
+        left: '8px',
+        top: 0,
+        bottom: 0,
+        width: '2px',
+        backgroundColor: '#d3b8ae',
+        borderRadius: '1px',
+      }}
+    />
+    {items.map((item, i) => (
       <div
+        key={i}
         style={{
-          position: 'absolute',
-          left: '10px',
-          top: 0,
-          bottom: 0,
-          width: '2px',
-          backgroundColor: '#d3b8ae',
-          borderRadius: '1px',
+          position: 'relative',
+          marginBottom: '30px',
         }}
-      />
-      {items.map((item, i) => (
+      >
+        {/* Dot */}
         <div
-          key={i}
           style={{
-            position: 'relative',
-            marginBottom: '30px',
-            paddingLeft: '40px', 
+            position: 'absolute',
+            left: '3px',
+            top: '6px',
+            width: '12px',
+            height: '12px',
+            borderRadius: '50%',
+            backgroundColor: '#a37f74',
+            border: '2px solid #f9f4ef',
+          }}
+        />
+
+        {/* Text */}
+        <Typography
+          variant="subtitle1"
+          sx={{
+            fontWeight: 600,
+            pl: { xs: 5, sm: 6 } // ⭐ responsive padding-left
           }}
         >
-          <div
-            style={{
-              position: 'absolute',
-              left: '5px', 
-              top: '6px',
-              width: '12px',
-              height: '12px',
-              borderRadius: '50%',
-              backgroundColor: '#a37f74',
-              border: '2px solid #f9f4ef',
-              boxSizing: 'border-box',
-            }}
-          />
+          {isEducation ? item.degree : `${item.role} — ${item.company}`}
+        </Typography>
 
-          {/* text */}
-          <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
-            {isEducation ? item.degree : `${item.role} — ${item.company}`}
-          </Typography>
-          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            {isEducation ? item.school : item.date}
-          </Typography>
-          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            {isEducation ? item.date : item.desc}
-          </Typography>
-        </div>
-      ))}
-    </div>
-  )
+        <Typography
+          variant="body2"
+          sx={{
+            color: 'text.secondary',
+            pl: { xs: 5, sm: 6 } // ⭐ keep alignment
+          }}
+        >
+          {isEducation ? item.school : item.date}
+        </Typography>
+
+        <Typography
+          variant="body2"
+          sx={{
+            color: 'text.secondary',
+            pl: { xs: 5, sm: 6 }
+          }}
+        >
+          {isEducation ? item.date : item.desc}
+        </Typography>
+      </div>
+    ))}
+  </div>
+)
+
 
   return (
     <motion.div
