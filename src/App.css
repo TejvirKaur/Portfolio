@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+html,
+body {
+  background-color: #ffffff !important;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
