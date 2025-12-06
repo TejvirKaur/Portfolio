@@ -1,4 +1,6 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Layout from "./Layout";
 import AboutSection from "./components/AboutSection";
 import ResumeSection from "./components/ResumeSection";
@@ -6,13 +8,18 @@ import ProjectSection from "./components/ProjectSection";
 import SkillsSection from "./components/SkillsSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/FooterSection";
+import AllProjects from "./components/AllProjects"; // <-- import your page
 
-export default function App() {
+function HomePage() {
   return (
     <>
       <Layout>
         <div id="about">
           <AboutSection />
+        </div>
+
+        <div id="skills">
+          <SkillsSection />
         </div>
 
         <div id="resume">
@@ -23,15 +30,23 @@ export default function App() {
           <ProjectSection />
         </div>
 
-        <div id="skills">
-          <SkillsSection />
-        </div>
-
         <div id="contact">
           <ContactSection />
         </div>
       </Layout>
+
       <Footer />
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<AllProjects />} />
+      </Routes>
+    </Router>
   );
 }
