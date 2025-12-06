@@ -75,14 +75,20 @@ export default function ProfileSidebar() {
         variant="contained"
         startIcon={<Mail />}
         href="mailto:tejvirkaur01@gmail.com"
-        sx={{
-          borderRadius: 1.5,
-          textTransform: "none",
-          px: 3,
-          fontWeight: "bold",
-          backgroundColor: "#a37f74",
-          "&:hover": { backgroundColor: "#8d6e63" },
-        }}
+       sx={{
+                background: "linear-gradient(90deg, #a37f74, #b48b80)",
+                borderRadius: 1.5,
+                px: 4,
+                py: 1,
+                textTransform: "none",
+                fontWeight: 600,
+                "&:hover": {
+                  background: "linear-gradient(90deg, #8d6e63, #9c746a)",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 4px 10px rgba(163,127,116,0.3)",
+                },
+                transition: "all 0.3s ease",
+              }}
       >
         Contact
       </Button>

@@ -40,57 +40,6 @@ export default function ResumeSection() {
     },
   ]
 
-  // const Timeline = ({ items, isEducation }) => (
-  //   <div style={{ position: 'relative', marginLeft: '20px' }}>
-  //     <div
-  //       style={{
-  //         position: 'absolute',
-  //         left: '10px',
-  //         top: 0,
-  //         bottom: 0,
-  //         width: '2px',
-  //         backgroundColor: '#d3b8ae',
-  //         borderRadius: '1px',
-  //       }}
-  //     />
-  //     {items.map((item, i) => (
-  //       <div
-  //         key={i}
-  //         style={{
-  //           position: 'relative',
-  //           marginBottom: '30px',
-  //           paddingLeft: '40px', 
-  //         }}
-  //       >
-  //         <div
-  //           style={{
-  //             position: 'absolute',
-  //             left: '5px', 
-  //             top: '6px',
-  //             width: '12px',
-  //             height: '12px',
-  //             borderRadius: '50%',
-  //             backgroundColor: '#a37f74',
-  //             border: '2px solid #f9f4ef',
-  //             boxSizing: 'border-box',
-  //           }}
-  //         />
-
-  //         {/* text */}
-  //         <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
-  //           {isEducation ? item.degree : `${item.role} — ${item.company}`}
-  //         </Typography>
-  //         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-  //           {isEducation ? item.school : item.date}
-  //         </Typography>
-  //         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-  //           {isEducation ? item.date : item.desc}
-  //         </Typography>
-  //       </div>
-  //     ))}
-  //   </div>
-  // )
-
   const Timeline = ({ items, isEducation }) => (
   <div style={{ position: 'relative' }}>
     <div
@@ -131,7 +80,7 @@ export default function ResumeSection() {
           variant="subtitle1"
           sx={{
             fontWeight: 600,
-            pl: { xs: 5, sm: 6 } // ⭐ responsive padding-left
+            pl: { xs: 5, sm: 6 } 
           }}
         >
           {isEducation ? item.degree : `${item.role} — ${item.company}`}
@@ -141,7 +90,7 @@ export default function ResumeSection() {
           variant="body2"
           sx={{
             color: 'text.secondary',
-            pl: { xs: 5, sm: 6 } // ⭐ keep alignment
+            pl: { xs: 5, sm: 6 } 
           }}
         >
           {isEducation ? item.school : item.date}
@@ -199,13 +148,19 @@ export default function ResumeSection() {
             rel="noopener noreferrer"
             variant="contained"
             sx={{
+                background: "linear-gradient(90deg, #a37f74, #b48b80)",
                 borderRadius: 1.5,
-                mt: 3,
-                textTransform: 'none',
-                fontWeight: 'bold',
-                backgroundColor: '#a37f74',
-                '&:hover': { backgroundColor: '#8d6e63' },
-            }}
+                px: 4,
+                py: 1,
+                textTransform: "none",
+                fontWeight: 600,
+                "&:hover": {
+                  background: "linear-gradient(90deg, #8d6e63, #9c746a)",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 4px 10px rgba(163,127,116,0.3)",
+                },
+                transition: "all 0.3s ease",
+              }}
             >
             Download Resume (PDF)
             </Button>

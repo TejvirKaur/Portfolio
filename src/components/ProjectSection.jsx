@@ -11,6 +11,8 @@ import padelpatchImage from '../assets/ProjectCover/padelpatch.jpeg';
 import streetsightImage from '../assets/ProjectCover/streetsight.jpeg';
 import zyraImage from '../assets/ProjectCover/zyraImage.jpeg';
 import sudikshaImage from '../assets/ProjectCover/SudikshaImage.jpeg';
+import { Link } from "react-router-dom";
+
 
 const projects = [
   {
@@ -18,12 +20,6 @@ const projects = [
     image: pawllImage,
     desc: "A UI/UX research project focused on simplifying pet care through thoughtful design.",
     link: "https://www.figma.com/proto/E6z56qGl2nR5PJ6r8k76Hr/Group-5--PAWLL---Prototype?node-id=451-1647&starting-point-node-id=451%3A1637",
-  },
-  {
-    title: "PEDAL PATCH – Cycling Community Website",
-    image: padelpatchImage,
-    desc: "A website that connects cyclists to bike service providers through real-time location tracking and booking.",
-    link: "#",
   },
   {
     title: "StreetSight – Campaign Management App",
@@ -35,7 +31,13 @@ const projects = [
     title: "Zyra – Habit building Mobile App for Kids",
     image: zyraImage,
     desc: "Zyra is an AR-powered habit-building app that turns kids’ daily routines into fun adventures with interactive 3D companions and playful learning.",
-    link: "https://zyraapp.wmdd.ca/",
+    link: "https://zyra.wmddprogram.com/",
+  },
+    {
+    title: "PEDAL PATCH – Cycling Community Website",
+    image: padelpatchImage,
+    desc: "A website that connects cyclists to bike service providers through real-time location tracking and booking.",
+    link: "#",
   },
   {
     title: "Sudiksha Kumar - Portfolio",
@@ -46,7 +48,7 @@ const projects = [
  
 ];
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ showAll = false }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -54,6 +56,7 @@ export default function ProjectsSection() {
       transition={{ duration: 0.8 }}
       style={{ width: "100%" }}
     >
+    {!showAll && (
       <Typography
         variant="h4"
         gutterBottom
@@ -68,6 +71,8 @@ export default function ProjectsSection() {
       >
         Projects
       </Typography>
+    )}
+
 
       <Grid
         container
@@ -78,7 +83,7 @@ export default function ProjectsSection() {
           justifyContent: "center",
         }}
       >
-        {projects.map((p, i) => (
+        {(showAll ? projects : projects.slice(0, 3)).map((p, i) => (
           <Grid
             item
             xs={12}   
@@ -142,7 +147,37 @@ export default function ProjectsSection() {
             </Card>
           </Grid>
         ))}
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
+      {!showAll && (
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
+          <Button
+            variant="contained"
+            component={Link}
+            to="/projects"
+           sx={{
+                background: "linear-gradient(90deg, #a37f74, #b48b80)",
+                borderRadius: 1.5,
+                px: 4,
+                py: 1,
+                textTransform: "none",
+                fontWeight: 600,
+                "&:hover": {
+                  background: "linear-gradient(90deg, #8d6e63, #9c746a)",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 4px 10px rgba(163,127,116,0.3)",
+                },
+                transition: "all 0.3s ease",
+              }}
+          >
+            View All Projects
+          </Button>
+        </div>
+      )}
+
+      </div>
+
       </Grid>
     </motion.div>
   );
 }
+
